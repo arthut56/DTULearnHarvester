@@ -1,8 +1,5 @@
 from dotenv import load_dotenv
 import os
-load_dotenv()
-user_email = os.getenv("CREDENTIALS_EMAIL")
-user_password = os.getenv("CREDENTIALS_PASSWORD")
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -11,7 +8,15 @@ from selenium import webdriver
 import requests
 
 
-def get_authenticated_session():
+def get_authenticated_session(user_email="", user_password=""):
+
+    if user_email == "":
+        load_dotenv()
+        user_email = os.getenv("CREDENTIALS_EMAIL")
+    if user_password == "":
+        load_dotenv()
+        user_password = os.getenv("CREDENTIALS_PASSWORD")
+
     driver = webdriver.Chrome()
     driver.get("https://learn.inside.dtu.dk")
 
