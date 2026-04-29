@@ -8,7 +8,7 @@ git clone https://github.com/username/DTULearnHarvester
 cd DTULearnHarvester
 pip install -r requirements.txt
 ```
-Create a .env file at the root of the project with your user credentials, e.g:
+Create a .env file at the root of the project with your user credentials with this format:
 ```
 CREDENTIALS_EMAIL=studentnumber@dtu.dk
 CREDENTIALS_PASSWORD=password
