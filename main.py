@@ -7,7 +7,7 @@ from typing import Annotated
 
 FormatStyle = Enum("FormatStyle", {k: k for k in FORMAT_MAPPING})
 
-def main(course_no, format_style: Annotated[FormatStyle, typer.Argument()] = ''):
+def main(course_no, format_style: Annotated[FormatStyle, typer.Argument()] = 'default'):
     download_course(course_no, format_style.value)
 
 
