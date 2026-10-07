@@ -14,7 +14,11 @@ class CourseDownloader:
 
 
     def download_everything(self, course_rootdata):
-        root_dir = self.format(self.course_name).split(",")[0]
+        course_title = self.format(self.course_name).split(",")[0]
+        #should have format COURSENO xxxxxx xxxxx ...
+        course_number = course_title.split(" ")[0]
+        tail = course_title.split(" ")[1:]
+        root_dir = " ".join(tail + [course_number])
         create_directory(root_dir)
 
         no_downloads = 0
